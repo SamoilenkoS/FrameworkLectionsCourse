@@ -1,4 +1,4 @@
-﻿namespace FrameworkLectionsCourse.Enums
+﻿namespace CourseBL.Enums
 {
     public enum Category
     {

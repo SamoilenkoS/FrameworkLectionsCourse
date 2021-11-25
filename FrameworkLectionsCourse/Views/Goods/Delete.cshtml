@@ -1,4 +1,4 @@
-﻿@model FrameworkLectionsCourse.Models.Good
+﻿@model CoursesDAL.Models.Good
 
 @{
     ViewBag.Title = "Delete";
@@ -20,6 +20,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.MinCount)
         </dt>
 
@@ -29,7 +37,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

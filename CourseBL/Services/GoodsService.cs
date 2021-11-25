@@ -1,7 +1,7 @@
-﻿using FrameworkLectionsCourse.Models;
+﻿using CourseBL.Models;
 using System.Collections.Generic;
 
-namespace FrameworkLectionsCourse.Services
+namespace CourseBL.Services
 {
     public class GoodsService
     {

@@ -1,26 +1,29 @@
-﻿using FrameworkLectionsCourse.Models;
-using FrameworkLectionsCourse.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using CoursesBL.Services;
+using CoursesDAL.Models;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace FrameworkLectionsCourse.Controllers
 {
     public class GoodsController : Controller
     {
-        private GoodsService _goodsService = new GoodsService();
-        // GET: Goods
-        public ActionResult Index()
+        private IGoodsService _goodsService;
+
+        public GoodsController(IGoodsService goodsService)
         {
-            return View(_goodsService.GetAllGoods());
+            _goodsService = goodsService;
+        }
+
+        // GET: Goods
+        public async Task<ActionResult> Index()
+        {
+            return View(await _goodsService.GetAllAsync());
         }
 
         // GET: Goods/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View(_goodsService.GetGoodById(id));
+            return View(await _goodsService.GetByIdAsync(id));
         }
 
         // GET: Goods/Create
@@ -31,11 +34,12 @@ namespace FrameworkLectionsCourse.Controllers
 
         // POST: Goods/Create
         [HttpPost]
-        public ActionResult Create(Good good)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(Good good)
         {
             try
             {
-                _goodsService.Add(good);
+                await _goodsService.CreateAsync(good);
                 // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
@@ -47,19 +51,20 @@ namespace FrameworkLectionsCourse.Controllers
         }
 
         // GET: Goods/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            return View(_goodsService.GetGoodById(id));
+            return View(await _goodsService.GetByIdAsync(id));
         }
 
         // POST: Goods/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Good good)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(int id, Good good)
         {
             try
             {
                 good.Id = id;
-                _goodsService.Update(good);
+                await _goodsService.UpdateAsync(good);
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
@@ -71,18 +76,19 @@ namespace FrameworkLectionsCourse.Controllers
         }
 
         // GET: Goods/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View(_goodsService.GetGoodById(id));
+            return View(await _goodsService.GetByIdAsync(id));
         }
 
         // POST: Goods/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Good good)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult >Delete(int id, Good good)
         {
             try
             {
-                _goodsService.Delete(id);
+                await _goodsService.DeleteAsync(id);
                 // TODO: Add delete logic here
 
                 return RedirectToAction("Index");
