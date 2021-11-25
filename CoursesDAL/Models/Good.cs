@@ -8,8 +8,7 @@ namespace CoursesDAL.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
+        public int GoodId { get; set; }
         public string Title { get; set; }
         [Required]
         public Category Category { get; set; }

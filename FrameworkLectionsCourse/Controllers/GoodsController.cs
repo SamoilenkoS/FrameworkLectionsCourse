@@ -63,7 +63,7 @@ namespace FrameworkLectionsCourse.Controllers
         {
             try
             {
-                good.Id = id;
+                good.GoodId = id;
                 await _goodsService.UpdateAsync(good);
                 // TODO: Add update logic here
 

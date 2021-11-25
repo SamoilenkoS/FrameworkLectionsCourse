@@ -1,9 +1,6 @@
 ﻿using CoursesDAL.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CoursesDAL.Repositories
@@ -28,7 +25,7 @@ namespace CoursesDAL.Repositories
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var item = _coursesContext.Goods.Attach(new Good { Id = id });
+            var item = _coursesContext.Goods.Attach(new Good { GoodId = id });
             var result = item != null;
             if (result)
             {

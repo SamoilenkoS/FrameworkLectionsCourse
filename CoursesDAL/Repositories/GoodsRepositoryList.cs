@@ -1,9 +1,5 @@
 ﻿using CoursesDAL.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoursesDAL.Repositories
 {
@@ -19,19 +15,19 @@ namespace CoursesDAL.Repositories
             {
                 new Good
                 {
-                    Id = _id++,
+                    GoodId = _id++,
                     Title = "Retail A",
                     Category = Enums.Category.Retail
                 },
                 new Good
                 {
-                    Id = _id++,
+                    GoodId = _id++,
                     Title = "Wholesale A",
                     Category = Enums.Category.Wholesale
                 },
                 new Good
                 {
-                    Id = _id++,
+                    GoodId = _id++,
                     Title = "Wholesale B",
                     Category = Enums.Category.Wholesale,
                     MinCount = 10
@@ -41,7 +37,7 @@ namespace CoursesDAL.Repositories
 
         public void Add(Good good)
         {
-            good.Id = _id++;
+            good.GoodId = _id++;
             _goods.Add(good);
         }
 
@@ -52,12 +48,12 @@ namespace CoursesDAL.Repositories
 
         public Good GetGoodById(int id)
         {
-            return _goods.Find(x => x.Id == id);
+            return _goods.Find(x => x.GoodId == id);
         }
 
         public void Update(Good good)
         {
-            var element = _goods.Find(x => x.Id == good.Id);
+            var element = _goods.Find(x => x.GoodId == good.GoodId);
             if (element != null)
             {
                 var index = _goods.IndexOf(element);
@@ -67,7 +63,7 @@ namespace CoursesDAL.Repositories
 
         public bool Delete(int id)
         {
-            var element = _goods.Find(x => x.Id == id);
+            var element = _goods.Find(x => x.GoodId == id);
 
             return _goods.Remove(element);
         }

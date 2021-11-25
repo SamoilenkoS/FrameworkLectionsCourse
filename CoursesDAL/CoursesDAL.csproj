@@ -56,7 +56,15 @@
     <Compile Include="Migrations\202111251713546_Initial.designer.cs">
       <DependentUpon>202111251713546_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111251800285_Update1.cs" />
+    <Compile Include="Migrations\202111251800285_Update1.designer.cs">
+      <DependentUpon>202111251800285_Update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\GoodsWarehouse.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Repositories\GoodsRepository.cs" />
     <Compile Include="Repositories\GoodsRepositoryList.cs" />
     <Compile Include="Enums\Category.cs" />
@@ -71,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111251713546_Initial.resx">
       <DependentUpon>202111251713546_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111251800285_Update1.resx">
+      <DependentUpon>202111251800285_Update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
