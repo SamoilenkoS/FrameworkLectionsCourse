@@ -1,5 +1,6 @@
 ﻿using CoursesDAL.Models;
 using CoursesDAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,6 +17,10 @@ namespace CoursesBL.Services
 
         public async Task<Good> CreateAsync(Good good)
         {
+            if(good.Category == CoursesDAL.Enums.Category.Wholesale && !good.MinCount.HasValue)
+            {
+                throw new ArgumentException();
+            }
             return await _goodsRepository.CreateAsync(good);
         }
 

@@ -27,6 +27,7 @@ namespace FrameworkLectionsCourse.Controllers
         }
 
         // GET: Goods/Create
+        [Authorize(Roles ="User,Admin")]
         public ActionResult Create()
         {
             return View();
