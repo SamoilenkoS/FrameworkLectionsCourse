@@ -17,10 +17,12 @@ namespace CoursesBL.Services
 
         public async Task<Good> CreateAsync(Good good)
         {
-            if(good.Category == CoursesDAL.Enums.Category.Wholesale && !good.MinCount.HasValue)
+            if((good.Category == CoursesDAL.Enums.Category.Wholesale && !good.MinCount.HasValue) ||
+                !IsTitleValid(good.Title))
             {
                 throw new ArgumentException();
             }
+
             return await _goodsRepository.CreateAsync(good);
         }
 
@@ -42,6 +44,10 @@ namespace CoursesBL.Services
         public async Task<bool> UpdateAsync(Good good)
         {
             return await _goodsRepository.UpdateAsync(good);
+        }
+        private bool IsTitleValid(string title)
+        {
+            return title.Length > 0 && char.IsLetter(title[0]) && char.IsUpper(title[0]);
         }
     }
 }

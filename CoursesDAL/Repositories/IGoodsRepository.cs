@@ -7,7 +7,7 @@ namespace CoursesDAL.Repositories
     public interface IGoodsRepository
     {
         Task<Good> CreateAsync(Good good);
-        Task<IEnumerable<Good>> GetAllAsync();
+        Task<IEnumerable<Good>> GetAllAsync(bool isDeleted = false);
         Task<Good> GetByIdAsync(int id);
         Task<bool> UpdateAsync(Good good);
         Task<bool> DeleteAsync(int id);

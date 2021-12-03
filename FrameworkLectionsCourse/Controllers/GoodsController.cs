@@ -38,17 +38,10 @@ namespace FrameworkLectionsCourse.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Good good)
         {
-            try
-            {
-                await _goodsService.CreateAsync(good);
-                // TODO: Add insert logic here
+            await _goodsService.CreateAsync(good);
+            // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Goods/Edit/5
@@ -99,5 +92,21 @@ namespace FrameworkLectionsCourse.Controllers
                 return View();
             }
         }
+
+        /*
+        public JsonResult ValidateTitle(string title)
+        {
+            var result = false;
+            if(title.Length > 0)
+            {
+                if (char.IsLetter(title[0]) && char.IsUpper(title[0]))
+                {
+                    result = true;
+                }
+            }
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        */
     }
 }

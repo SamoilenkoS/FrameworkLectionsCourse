@@ -46,9 +46,30 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +82,22 @@
     <Compile Include="Migrations\202111301605041_Initial.cs" />
     <Compile Include="Migrations\202111301605041_Initial.designer.cs">
       <DependentUpon>202111301605041_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112031614023_Update.cs" />
+    <Compile Include="Migrations\202112031614023_Update.designer.cs">
+      <DependentUpon>202112031614023_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112031624564_Update1.cs" />
+    <Compile Include="Migrations\202112031624564_Update1.designer.cs">
+      <DependentUpon>202112031624564_Update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112031727571_AddIsDeleted.cs" />
+    <Compile Include="Migrations\202112031727571_AddIsDeleted.designer.cs">
+      <DependentUpon>202112031727571_AddIsDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112031800329_SelectGoodsMigration1.cs" />
+    <Compile Include="Migrations\202112031800329_SelectGoodsMigration1.designer.cs">
+      <DependentUpon>202112031800329_SelectGoodsMigration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
@@ -84,6 +121,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111301605041_Initial.resx">
       <DependentUpon>202111301605041_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031614023_Update.resx">
+      <DependentUpon>202112031614023_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031624564_Update1.resx">
+      <DependentUpon>202112031624564_Update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031727571_AddIsDeleted.resx">
+      <DependentUpon>202112031727571_AddIsDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031800329_SelectGoodsMigration1.resx">
+      <DependentUpon>202112031800329_SelectGoodsMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
